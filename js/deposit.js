@@ -8,6 +8,12 @@ document.getElementById('btn-deposit').addEventListener('click', function () {
     const depositInputString = depositInputField.value;
     const depositInput = parseFloat(depositInputString);
 
+    if (isNaN(depositInput)) {
+        alert('invalid amount')
+        return;
+    }
+    depositInputField.value = '';
+
     // 1. get the element by id
     // 2. get the value from the element
     // 3.convert String value to a Number
@@ -16,12 +22,7 @@ document.getElementById('btn-deposit').addEventListener('click', function () {
     const depositAmount = parseFloat(depositAmountString);
 
     depositAmountField.innerText = depositInput + depositAmount;
-    depositInputField.value = '';
 
-    if (isNaN(withdrawInputField)) {
-        alert('invalid amount')
-        return;
-    }
 
 
     // 1. get the element by id
@@ -31,5 +32,6 @@ document.getElementById('btn-deposit').addEventListener('click', function () {
     const balanceAmountString = balanceField.innerText;
     const balanceAmount = parseFloat(balanceAmountString);
     balanceField.innerText = depositInput + balanceAmount;
+
 
 })

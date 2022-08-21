@@ -8,7 +8,7 @@ document.getElementById('btn-Withdraw').addEventListener('click', function () {
     const withdrawInput = parseFloat(withdrawInputString);
 
     withdrawInputField.value = '';
-    if (isNaN(withdrawInputField)) {
+    if (isNaN(withdrawInput)) {
         alert('invalid amount')
         return;
     }
